@@ -1,0 +1,545 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+:root{
+    --mainColor:orange;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,html{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+
+.container{
+    margin: 0 100px;
+}
+img{
+    width: 100%;
+}
+
+/* ////////////////////////////////////////////////////// nav */
+
+nav{
+    background-color: white;
+}
+
+nav .bars{
+    display: none;
+    color: gray;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+nav .container{
+    display: flex;
+    align-items: center;  
+    border-bottom: 1px solid #ddd;
+    height:72px;
+
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    font-size: 19px;
+    gap: 15px;
+    color: gray;
+    margin-left: 50px;
+
+}
+
+nav img{
+    width: 50px;
+    border: 2px solid var(--mainColor);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+nav .avatars{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav i{
+    font-size: 24px;
+    cursor: pointer;
+}
+
+nav li {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    height:72px;
+    font-size: 16px;
+}
+nav li::before {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: var(--mainColor);
+    position: absolute;
+    bottom:0;
+    left: -100%;
+    transition: .5s;
+}
+
+nav li:hover::before {
+    left: 0; 
+}
+
+.links {
+    position: fixed;
+    flex-direction: column;
+    width: 200px;
+    top: 0;
+    left:-100%; 
+    bottom: 0;
+    padding-left: 40px;
+    background-color: white;
+    transition: .8s;
+    z-index: 11111111111;
+}
+.links ul{
+    list-style: none; 
+    padding-top: 60px;   
+    font-weight: 500;   
+     
+}
+
+.links li{
+    height: 50px;
+}
+.links i{
+    color: black;
+    padding-top: 40px;
+}
+
+
+@media (max-width: 767px) {
+    nav .container{
+        border: none;
+    }
+    nav ul{
+        display: none;
+    }
+    nav .avatars i{
+        font-size: 19px;
+    }
+
+    nav .avatars img{
+        width: 30px;   
+    }
+    .container{
+        margin: 0 20px;
+    }
+    nav .bars{
+        display: block;
+        
+    }
+}
+
+/* //////////////////////////////////////////////////// phone slider */
+
+.phoneSlider{
+    display: none;  
+}
+
+ .phoneSlider img{
+    height: 290px;
+ }
+
+
+@media (max-width: 767px) {
+    .layer{
+        display:none;
+    }
+
+    .body .images{
+        display: none;
+    }
+    .phoneSlider{
+    display: block;
+    }
+
+    .rightSlide ,.leftSlide{
+   
+        background-color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        position: absolute;
+    }
+
+    .leftSlide:hover ,.rightSlide:hover{
+        color: var(--mainColor);
+    }
+
+    .phoneSlider .leftSlide{
+        left: 10px;
+        top: 30%;
+       }
+
+    .phoneSlider .rightSlide{
+        right: 10px;
+        top: 30%;        
+    }
+}
+
+/* ///////////////////////////////////////////////////// body images*/
+
+.body{
+    padding:40px 20px;  
+}
+.body .container{
+    display: flex;
+    gap: 50px;
+    align-items:center;
+}
+
+.body .images ,.layer .images{
+    width: 39%;
+    padding: 0 20px;
+}
+
+ .layer .images img , .body .images img{
+    border-radius: 10px;
+}
+
+.images .secondary img{
+    width: 20%;
+    cursor: pointer;
+}
+
+ .images .secondary {
+    margin-top: 12px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main{
+    cursor: pointer;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .container{
+        margin: 0 50px;
+    }
+    .body .images {
+        width: 60%;
+    }
+    .layer .images{
+        width: 50%;
+    }
+    .body{
+        padding: 60px 20px;
+    }
+}
+
+/* ////////////////////////////////////////// body info */
+.body .info{
+    padding: 10px;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:15px;
+    font-size: 23px;
+   
+}
+
+.body .info h1{
+    letter-spacing: 2px;
+}
+
+.body .info h6{
+    color:var(--mainColor);
+    font-size:12px;
+    letter-spacing: 2px;
+    
+}
+
+.body .info p{
+    font-size: 13px;
+    color: gray;
+}
+
+.body .info h3 + span{
+    color: var(--mainColor);
+    background-color: rgb(236, 220, 189);
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 1px 3px;
+}
+
+.canceled{
+    text-decoration: line-through;
+    margin-top: 20px;
+}
+
+.totalPrice{
+display: flex;
+flex-direction: column;
+}
+
+.body .info .price{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+} 
+
+.body .info .box{
+background-color: rgba(196, 196, 218, 0.171);
+padding: 4px 12px;
+border-radius: 4px;
+width: 80px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+} 
+
+.body .info .box span{
+    font-size: 14px;
+    cursor: pointer;
+} 
+
+.body .info .box span:not(:nth-child(2) ){
+color: var(--mainColor);
+
+} 
+
+.cart button {
+    background-color: orange;
+    border: none;
+    padding: 8px 30px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cart button i{
+    margin-right: 10px;
+}
+
+.shopping{
+    display: flex;
+    gap: 15px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .body .info{
+font-size: 18px;   
+ }
+    .body .info h6{
+        font-size: 8px;
+    }
+    .body .info p {
+        font-size: 11px;
+        line-height: 16px;
+    }
+}
+
+
+/* ///////////////////////////////////////// media qureies for body section */
+
+@media (max-width: 767px) {
+    .body .images{
+        display: none;
+    }
+    .body .info{
+        width: 100%;
+        padding: 0;
+        font-size: 18px;
+    }
+
+    .body .info p{
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .shopping{
+        flex-wrap: wrap;
+    }
+    .body .info .box{
+        width: 100%;
+        padding: 14px ;
+    }
+    .cart{
+        width: 100%;
+    }
+    .cart button{
+        width: 100%;
+        padding: 14px ;
+    }
+    .totalPrice{
+        flex-direction: row;
+        justify-content: space-between;
+       
+    }
+    .canceled{
+        margin-top: 0;
+    }
+}
+
+
+/* /////////////////////////////////////////// layer */
+
+.layer{
+    background-color: rgba(0, 0, 0, 0.756);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+.layer .container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layer .main{
+    position: relative;
+}
+
+ .right ,.left{
+   
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    position: absolute;
+}
+
+
+.layer .left{
+    left: 0px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+   }
+.layer .right{
+    right: 0px;
+    top: 50%;
+    transform: translate(50%,-50%);
+    
+}
+.layer .close{
+    position: absolute;
+    top: -25px;
+    right: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.active{
+    opacity: .4;
+    border: 2px solid orange;
+}
+
+.right:hover , .left:hover, .close:hover{
+    color: var(--mainColor);
+}
+
+/* ////////////////////////////////  cart */
+  
+.myCart{
+width: 250px;
+background-color: white;
+border-radius: 6px;
+position: fixed;
+right: 50px;
+top:80px;
+box-shadow: 1px 1px 10px #ddd;
+z-index: 222222222;
+}
+
+.myCart h4{
+padding: 20px;
+border-bottom: 1px solid #ddd;
+}
+
+.myCart .content{
+min-height: 130px;
+padding: 15px;
+color: gray;
+font-size: smaller;
+}
+
+@media (max-width: 767px) {
+    .myCart{
+        width: 95%;
+        margin: auto;
+        right: 5px;
+        left: 5px;
+    }
+    .myCart .content{
+        min-height: 160px;
+    }
+}
+.product img{
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+
+}
+.product{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: smaller;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content button{
+    background-color: var(--mainColor);
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: white;
+}
+
+.product p span{
+    color: black;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+@media (max-width: 767px) {
+    .myCart .content{
+        font-size: larger;
+    }
+    .product img{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.trash{
+    cursor: pointer;
+}

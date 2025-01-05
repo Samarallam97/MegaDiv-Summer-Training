@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="layout">
+        <div class="card">          
+            <img src="images/bf7da9b2ddd7d2562ad652275493a411.jpg" alt="perfume">      
+            <div class="details">
+                <p class="subtitle">PERFUME</p>
+                <h1>Gabrielle Essence Eau De Parfum</h1>
+                <p>A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
+               <div class="price">
+                <h3 class="newPrice">$149.99</h3>
+                <h3 class="canceledPrice">$169.99</h3>
+               </div>
+               <button id="btn">🛒 Add To Cart</button>           
+            </div>
+
+
+        </div>
+    </div>
+<script>
+    let btn =document.getElementById("btn");
+    let details=document.getElementsByClassName("details")[0]
+    btn.onclick=function(){
+    //  details.style="flex-direction: column-reverse;"
+
+        console.log(details.style)
+        
+        details.style['flex-direction'] = 'column-reverse'
+    }
+</script>
+</body>
+</html>
